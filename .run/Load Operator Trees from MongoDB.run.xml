@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="#1 Load Operator Trees from MongoDB" type="PythonConfigurationType" factoryName="Python" folderName="preprocessing INODE">
-    <module name="proton" />
+    <module name="valuenet" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
