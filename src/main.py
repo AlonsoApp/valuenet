@@ -84,14 +84,15 @@ if __name__ == '__main__':
 
         eval_results_string = "Epoch: {}    Sketch-Accuracy: {}     Accuracy: {}".format(epoch + 1, sketch_acc, acc)
         tqdm.write(eval_results_string)
-
+        """
         total_transformed, fail_transform, spider_eval_results = transform_to_sql_and_evaluate_with_spider(predictions,
                                                                                                            table_data,
                                                                                                            args.data_dir,
                                                                                                            output_path,
                                                                                                            tb_writer,
                                                                                                            epoch + 1)
-
+        """
+        total_transformed, fail_transform, spider_eval_results = 0,0, {}
         tqdm.write("Successfully transformed {} of {} from SemQL to SQL.".format(total_transformed - fail_transform, total_transformed))
         tqdm.write("Results from Spider-Evaluation:")
         for key, value in spider_eval_results.items():
