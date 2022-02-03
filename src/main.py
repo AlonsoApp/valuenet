@@ -17,15 +17,15 @@ from training import train
 from utils import setup_device, set_seed_everywhere, save_model, create_experiment_folder
 
 # initialize experiment tracking @ Weights & Biases
-import wandb
-wandb.init(project="proton")
+#import wandb
+#wandb.init(project="proton")
 
 
 if __name__ == '__main__':
     args = read_arguments_train()
 
     # log hyperparameters to Weights & Biases
-    wandb.config.update(args)
+    #wandb.config.update(args)
 
     experiment_name, output_path = create_experiment_folder(args.model_output_dir, args.exp_name)
     print("Run experiment '{}'".format(experiment_name))
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     model.to(device)
 
     # track the model
-    wandb.watch(model, log='parameters')
+    #wandb.watch(model, log='parameters')
 
     num_train_steps = len(train_loader) * args.num_epochs
     optimizer, scheduler = build_optimizer_encoder(model,
@@ -106,7 +106,7 @@ if __name__ == '__main__':
         with open(os.path.join(output_path, "eval_results.log"), "a+", encoding='utf-8') as writer:
             writer.write(eval_results_string + "\n")
 
-        wandb.log({"Sketch-accuracy": sketch_acc, "accuracy": acc}, step=epoch + 1)
+        #wandb.log({"Sketch-accuracy": sketch_acc, "accuracy": acc}, step=epoch + 1)
 
         tb_writer.add_scalar("sketch-accuracy", sketch_acc, epoch + 1)
         tb_writer.add_scalar("accuracy", acc, epoch + 1)
