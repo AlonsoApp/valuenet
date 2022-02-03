@@ -112,3 +112,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 /wandb/
+
+# macOS
+**/.DS_Store
